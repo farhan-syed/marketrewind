@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+
+/* Tailwind v4: move theme to CSS */
+@theme {
+  /* screens (breakpoints) */
+  --breakpoint-xs: 380px;
+
+  /* fonts */
+  --font-main: "Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* colors */
+  --color-twitter-blue: #1da1f2;
+  --color-dark: #181818;
+  --color-dark-menu: #121212;
+  --color-dark-hover: #3d3d3d;
+  --color-dark-p: #ffffff;
+  --color-dark-s: #aaaaaa;
+  --color-dark-purple: #673ab7;
+}
+
+/* Optional: if you want class-based dark mode (instead of media) */
+:root { color-scheme: light; }      /* default */
+.dark { color-scheme: dark; }       /* add `class="dark"` on <html> or <body> */
