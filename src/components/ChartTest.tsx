@@ -35,14 +35,14 @@ const chartConfig = {
 
 export default function Component() {
   return (
-    <Card className="bg-transparent border-none shadow-none">
+    <Card className="bg-transparent border-none shadow-none pb-2">
       {/* <CardHeader>
         <CardTitle>Area Chart</CardTitle>
         <CardDescription>
           Showing total visitors for the last 6 months
         </CardDescription>
       </CardHeader> */}
-      <CardContent>
+      <CardContent className="px-0">
         <ChartContainer config={chartConfig}>
           <AreaChart
             accessibilityLayer
@@ -52,7 +52,7 @@ export default function Component() {
               right: 12,
             }}
           >
-            <CartesianGrid vertical={false} />
+            <CartesianGrid vertical={false} horizontal={false} />
             <XAxis
               dataKey="month"
               tickLine={false}
@@ -61,7 +61,7 @@ export default function Component() {
               tickFormatter={(value) => value.slice(0, 3)}
             />
             <ChartTooltip
-              cursor={false}
+              cursor={true}
               content={<ChartTooltipContent indicator="line" />}
             />
             <Area

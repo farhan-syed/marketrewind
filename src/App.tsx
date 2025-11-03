@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100">
+      <div className="min-h-svh flex flex-col bg-zinc-950 text-zinc-100">
         <Header />
         <main className="flex-1">
         <Hero />
