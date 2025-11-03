@@ -6,15 +6,15 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/
 
 import type { ChartConfig } from "@/components/ui/chart"
 
-import { TrendingUp } from "lucide-react"
+// import { TrendingUp } from "lucide-react"
 
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  // CardDescription,
+  // CardFooter,
+  // CardHeader,
+  // CardTitle,
 } from "@/components/ui/card"
 
 const chartData = [

@@ -1,63 +1,63 @@
 // App.tsx (UI-only / presentational)
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import MainCard from "./components/MainCard";
-import ResultCard from "./components/ResultCard";
+// import MainCard from "./components/MainCard";
+// import ResultCard from "./components/ResultCard";
 import Upgrade from "./components/Upgrade";
 // import RelatedSymbols from "./components/RelatedSymbols";
 // import ErrorCard from "./components/ErrorCard";
 import Footer from "./components/Footer";
 
-import { fetchTimeSeries } from "./api";
-import { nextDayISO, toResult } from "./utils";
-import type { Fields, Result, TimeSeriesResponse } from "./types";
-import { useState, useRef } from "react";
+// import { fetchTimeSeries } from "./api";
+// import { nextDayISO, toResult } from "./utils";
+// import type { Fields, Result, TimeSeriesResponse } from "./types";
+// import { useState, useRef } from "react";
 
-function Explainer({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="">
-      <div className="text-base font-semibold text-zinc-100">{title}</div>
-      <p className="mt-1 text-sm text-zinc-300">{body}</p>
-    </div>
-  );
-}
+// function Explainer({ title, body }: { title: string; body: string }) {
+//   return (
+//     <div className="">
+//       <div className="text-base font-semibold text-zinc-100">{title}</div>
+//       <p className="mt-1 text-sm text-zinc-300">{body}</p>
+//     </div>
+//   );
+// }
 
 function App() {
 
-  const [result, setResult] = useState<Result | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const abortRef = useRef<AbortController | null>(null);
+  // const [result, setResult] = useState<Result | null>(null);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState<string | null>(null);
+  // const abortRef = useRef<AbortController | null>(null);
 
-  const handleCalculate = async (fields: Fields) => {
-    try {
-      setLoading(true);
-      setError(null);
-      setResult(null);
+  // const handleCalculate = async (fields: Fields) => {
+  //   try {
+  //     setLoading(true);
+  //     setError(null);
+  //     setResult(null);
 
-      abortRef.current?.abort()
-      abortRef.current = new AbortController();
+  //     abortRef.current?.abort()
+  //     abortRef.current = new AbortController();
 
-      const raw: TimeSeriesResponse = await fetchTimeSeries({
-        symbol: fields.symbol.trim(),
-        start: fields.entryDate,
-        end: nextDayISO(fields.exitDate),
-        interval: "1day"
-      });
+  //     const raw: TimeSeriesResponse = await fetchTimeSeries({
+  //       symbol: fields.symbol.trim(),
+  //       start: fields.entryDate,
+  //       end: nextDayISO(fields.exitDate),
+  //       interval: "1day"
+  //     });
 
-      const invested = fields.investedAmount === "" ? 0 : fields.investedAmount;
-      setResult(toResult(raw, invested));
-    } catch (err: unknown) {
-      console.log('error on abort');
-      if (err instanceof DOMException && err.name === "AbortError") {
-        // ignore
-      } else {
-        setError(err instanceof Error ? err.message : String(err));
-      }
-    } finally {
-      setLoading(false);
-    }
-  }
+  //     const invested = fields.investedAmount === "" ? 0 : fields.investedAmount;
+  //     setResult(toResult(raw, invested));
+  //   } catch (err: unknown) {
+  //     console.log('error on abort');
+  //     if (err instanceof DOMException && err.name === "AbortError") {
+  //       // ignore
+  //     } else {
+  //       setError(err instanceof Error ? err.message : String(err));
+  //     }
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
   return (
     <div className="App">
