@@ -8,6 +8,9 @@ import Upgrade from "./components/Upgrade";
 // import ErrorCard from "./components/ErrorCard";
 import Footer from "./components/Footer";
 
+// vercel analytics
+import { Analytics } from "@vercel/analytics/next"
+
 // import { fetchTimeSeries } from "./api";
 // import { nextDayISO, toResult } from "./utils";
 // import type { Fields, Result, TimeSeriesResponse } from "./types";
@@ -62,6 +65,7 @@ function App() {
   return (
     <div className="App">
       <div className="min-h-svh flex flex-col bg-zinc-950 text-zinc-100">
+        <Analytics />
         <Header />
         <main className="flex-1">
         <Hero />
