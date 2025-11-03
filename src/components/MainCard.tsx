@@ -42,17 +42,17 @@ function MainCard({ onCalculate }: MainCardProps){
   }
 
   return (
-    <div className="flex-none">
-        <div className="flex flex-col items-center">
-          <div className="w-110 p-5 mb-5 rounded-md shadow-2xl bg-white dark:bg-dark">
-            <p className="font-bold text-center text-black-900 dark:text-dark-p text-2xl leading-10 tracking-tight">
+    <div className="">
+        <div className="">
+          <div className="">
+            <p className="">
               Market Rewind
             </p>
-            <p className="text-xs text-center font-semibold leading-none dark:text-dark-s">
+            <p className="">
               What you could’ve made...or lost.
             </p>
             <form onSubmit={handleSubmit}>
-              <p className="pt-3 text-xs font-semibold leading-normal dark:text-dark-p">
+              <p className="">
                 Ticker Symbol
               </p>
 
@@ -62,25 +62,25 @@ function MainCard({ onCalculate }: MainCardProps){
                 name="symbol"
                 value={fields.symbol}
                 onChange={onTickerChange}
-                className="h-7 w-full p-3 text-xs rounded-sm shadow-inner bg-gray-100 border-0 focus:ring-green-500 focus:bg-white"
+                className=""
               />
 
-              <div className="flex justify-between">
-                <div className="pr-1">
-                  <p className="pt-3 text-xs font-semibold leading-normal dark:text-dark-p">
+              <div className="">
+                <div className="">
+                  <p className="">
                     Purchase Date
                   </p>
-                  <input type="text" placeholder="YYYY-MM-DD" onChange={onPurchaseDateChange} value={fields.entryDate} className="h-7 w-full p-3 text-xs rounded-sm shadow-inner bg-gray-100 border-0 focus:ring-green-500 focus:bg-white"/>
+                  <input type="text" placeholder="YYYY-MM-DD" onChange={onPurchaseDateChange} value={fields.entryDate} className=""/>
                 </div>
-                <div className="pl-1">
-                  <p className="pt-3 text-xs font-semibold leading-normal dark:text-dark-p">
+                <div className="">
+                  <p className="">
                     Sell Date
                   </p>
-                  <input type="text" placeholder="YYYY-MM-DD" onChange={onSellDateChange} value={fields.exitDate} className="h-7 w-full p-3 text-xs rounded-sm shadow-inner bg-gray-100 border-0 focus:ring-green-500 focus:bg-white"/>
+                  <input type="text" placeholder="YYYY-MM-DD" onChange={onSellDateChange} value={fields.exitDate} className=""/>
                 </div>
               </div>
 
-              <p className="pt-3 text-xs font-semibold leading-normal dark:text-dark-p">
+              <p className="">
                 Amount Invested
               </p>
               <input
@@ -89,12 +89,12 @@ function MainCard({ onCalculate }: MainCardProps){
                 name="amount"
                 value={fields.investedAmount}
                 onChange={onAmountInvestedChange}
-                className="block h-7 w-full p-3 text-xs rounded-sm shadow-inner bg-gray-100 border-0 focus:ring-green-500 focus:bg-white"
+                className=""
               />
 
               <button
                 type="submit"
-                className="h-10 w-full text-center font-semibold mt-6 p-1 bg-green-500 text-white rounded-sm hover:bg-green-400 hover:text-white focus:outline-none dark:bg-dark-purple dark:hover:bg-purple-500"
+                className=""
               >
                 Calculate
               </button>
