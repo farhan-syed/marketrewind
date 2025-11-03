@@ -11,7 +11,7 @@ function Header({ }: HeaderProps) {
           <span className="font-semibold tracking-tight">
             Market Rewind
           </span>
-          <RewindIcon size={16} strokeWidth={2} />
+          <RewindIcon size={16} strokeWidth={3} />
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm text-zinc-300">
           {/* <a className="text-zinc-100 font-medium" href="/rewind">Rewind</a>
