@@ -9,7 +9,7 @@ import Upgrade from "./components/Upgrade";
 import Footer from "./components/Footer";
 
 // vercel analytics
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 // import { fetchTimeSeries } from "./api";
 // import { nextDayISO, toResult } from "./utils";
