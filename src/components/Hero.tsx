@@ -8,7 +8,7 @@ function Hero({ }: HeroProps) {
 
     return (
         <section className="relative">
-            <div className="mx-auto max-w-7xl px-4 py-12 lg:py-16 grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="mx-auto max-w-6xl px-4 py-12 lg:py-10 grid gap-10 lg:grid-cols-2 lg:items-center">
                 <div>
                     <h1 className="text-3xl/tight md:text-5xl/tight font-semibold tracking-light">
                         Rewind, compare and track.
@@ -19,7 +19,7 @@ function Hero({ }: HeroProps) {
                         reminders.
                     </p>
                     <div className="mt-6 flex items-center gap-4">
-                        <a href="#tool" className="rounded-lg bg-zinc-100 px-4 py-2 text-zinc-900 font-medium hover:bg-white">Get started</a>
+                        <a href="#tool" className="rounded-lg bg-zinc-100 px-4 py-2 text-zinc-900 font-medium hover:bg-white">Create account</a>
                         {/* <a href="/pro" className="text-zinc-300 hover:text-zinc-100">See Pro features →</a> */}
                     </div>
                      <p className="mt-3 max-w-prose text-zinc-300 opacity-70 text-xs">No credit card required.</p>

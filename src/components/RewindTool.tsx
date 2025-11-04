@@ -30,27 +30,27 @@ function RewindTool({ }: RewindToolProps) {
                 </div>
 
                 {/* Inputs */}
-                <form className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-4">
-                    <label className="flex flex-col gap-1">
+                <form className="mt-4 grid grid-cols-1 w-full gap-3 md:grid-cols-4">
+                    <label className="flex flex-col gap-1 min-w-0">
                         <span className="text-xs text-zinc-400">Symbol</span>
                         <input
                             value=""
                             placeholder="AAPL"
-                            className="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500"
+                            className="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 min-w-0"
                             inputMode="text"
                             autoCapitalize="characters"
                             aria-label="Ticker"
                         />
                     </label>
-                    <label className="flex flex-col gap-1">
+                    <label className="flex flex-col gap-1 min-w-0">
                         <span className="text-xs text-zinc-400">Entry date</span>
                         <input
                             type="date"
-                            className="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500"
+                            className="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 min-w-0"
                             aria-label="Buy date"
                         />
                     </label>
-                    <label className="flex flex-col gap-1">
+                    <label className="flex flex-col gap-1 min-w-0">
                         <span className="text-xs text-zinc-400">Exit date</span>
                         <input
                             type="date"
@@ -58,7 +58,7 @@ function RewindTool({ }: RewindToolProps) {
                             aria-label="Sell date"
                         />
                     </label>
-                    <div className="flex items-end">
+                    <div className="flex items-end min-w-0">
                         <button
                             type="submit"
                             className="w-full rounded-lg bg-emerald-500 px-3 py-2 text-sm font-semibold text-emerald-950 hover:bg-emerald-400"
