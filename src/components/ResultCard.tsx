@@ -28,7 +28,7 @@ function ResultCard({loading, error, result}: ResultCardProps){
 
                     <hr className=""/>
                     <p className="">
-                    {result.symbol}
+                    {result.meta.symbol}
                     </p>
 
                     <p className="">Purchase on {result.entry.date}</p>

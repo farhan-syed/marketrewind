@@ -10,21 +10,21 @@ import { CartesianGrid, Area, AreaChart, XAxis } from "recharts"
 import type { ChartConfig } from "@/components/ui/chart"
 
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardFooter,
-  CardTitle
-} from "@/components/ui/card"
+// import {
+//   Card,
+//   CardContent,
+//   CardDescription,
+//   CardHeader,
+//   CardFooter,
+//   CardTitle
+// } from "@/components/ui/card"
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
-import { TrendingUp } from "lucide-react"
+// import { TrendingUp } from "lucide-react"
 
 
 const chartConfig = {
@@ -34,7 +34,7 @@ const chartConfig = {
   }
 } satisfies ChartConfig
 
-export default function ChartLineInteractive({metaData, historicValues}: RewindToolResultChartProps) {
+export default function ChartLineInteractive({historicValues}: RewindToolResultChartProps) {
 
   return (
     // <Card>
