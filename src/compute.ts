@@ -31,7 +31,6 @@ export function compute(
     const pnlAmountNetRaw = netProceedsRaw - investedAmount;
     const returnPctNetRaw = pnlAmountNetRaw / investedAmount;
 
-    
 
     return {
         shares: sharesRaw.toFixed(0),

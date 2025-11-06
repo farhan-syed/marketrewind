@@ -6,7 +6,7 @@ export type Fields = {
 }
 
 export type Result = {
-    symbol: string;
+    meta: TimeSeriesMeta;
     entry: {
         date: string
         close: string
@@ -23,6 +23,16 @@ export type Result = {
     pnlAmountNet: string;
     returnPctNet: string;
     isProfit: boolean;
+    historicValues: TimeSeriesValuesFormatted[]
+}
+
+export type TimeSeriesValuesFormatted = {
+    datetime: string;
+    open: number;
+    high: number;
+    low: number;
+    close: number;
+    volume: number;
 }
 
 // TwelveData
