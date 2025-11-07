@@ -8,6 +8,8 @@ import { fetchTimeSeries } from "@/api";
 import { nextDayISO, toResult } from "@/utils";
 import type { Fields, Result, TimeSeriesResponse } from "@/types";
 
+// pull in demo data
+import { demo } from "@/data/data"; // adjust path
 
 // import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
@@ -15,8 +17,7 @@ interface RewindToolProps { }
 
 function RewindTool({ }: RewindToolProps) {
 
-
-  const [result, setResult] = useState<Result | null>(null);
+  const [result, setResult] = useState<Result | null>(toResult(demo, 10000));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -53,10 +54,8 @@ function RewindTool({ }: RewindToolProps) {
     }
   }
 
-
-
   return (
-    <div id="tool" className="lg:justify-self-end w-full">
+    <div className="lg:justify-self-end w-full">
       <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 shadow-2xl">
       
         {/* form component */}

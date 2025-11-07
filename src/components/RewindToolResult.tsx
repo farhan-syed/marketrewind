@@ -29,12 +29,12 @@ function RewindToolResult({ loading, error, result }: RewindToolResultProps) {
             <div className="flex items-center justify-between border-b border-zinc-800 pb-4">
                 <div className="flex items-center gap-2">
                     <span className="text-sm font-medium">{result.meta.symbol}</span>
-                    <span className="rounded bg-zinc-800/80 px-1.5 py-0.5 text-[10px]">{result.meta.exchange}</span>
+                    <span className="rounded bg-zinc-800/80 px-1.5 py-0.5 text-[10px]">{result.meta.type}</span>
                 </div>
                 {/* <div className="text-xs text-zinc-400">
                     {result.meta.currency}
                 </div> */}
-                <span className="rounded bg-zinc-800/80 px-1.5 py-0.5 text-[10px]">{result.meta.type}</span>
+                <span className="rounded bg-zinc-800/80 px-1.5 py-0.5 text-[10px]">{result.meta.exchange}</span>
             </div>
             {/* Mini chart placeholder */}
             <div className="mt-4" aria-hidden>
