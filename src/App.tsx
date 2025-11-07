@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 // import MainCard from "./components/MainCard";
 // import ResultCard from "./components/ResultCard";
-import Upgrade from "./components/Upgrade";
+// import Upgrade from "./components/Upgrade";
 // import RelatedSymbols from "./components/RelatedSymbols";
 // import ErrorCard from "./components/ErrorCard";
 import Footer from "./components/Footer";
