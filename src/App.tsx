@@ -103,7 +103,7 @@ function App() {
 
         {/* <ResultCard loading={loading} error={error} result={result} /> */}
 
-        <Upgrade />
+        {/* <Upgrade /> */}
 
       </main>
       <Footer />
