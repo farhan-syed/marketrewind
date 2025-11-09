@@ -8,8 +8,16 @@ import Layout from '@/components/Layout';
 import Dashboard from '@/components/Dashboard';
 import Signin from '@/components/Signin';
 
+import { ClerkProvider } from '@clerk/clerk-react';
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY){
+  throw new Error('Missing Publishable Clerk Key');
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -19,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
         </Route>
       </Routes>
     </BrowserRouter>
+    </ClerkProvider>
   </StrictMode>
 )
 
