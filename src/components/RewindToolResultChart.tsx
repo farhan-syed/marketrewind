@@ -1,8 +1,7 @@
-import type { TimeSeriesMeta, TimeSeriesValuesFormatted } from "@/types";
+import type { Result, TimeSeriesMeta, TimeSeriesValuesFormatted } from "@/types";
 
 interface RewindToolResultChartProps {
-  metaData: TimeSeriesMeta;
-  historicValues: TimeSeriesValuesFormatted[];
+  result: Result; 
 }
 
 import { CartesianGrid, Area, AreaChart, XAxis } from "recharts";
@@ -27,13 +26,13 @@ import {
 
 const chartConfig = {
   close: {
-    label: "close",
-    color: "var(--color-red-800)",
+    label: "Price",
+    color: "",
   },
 } satisfies ChartConfig;
 
 export default function ChartLineInteractive({
-  historicValues,
+  result,
 }: RewindToolResultChartProps) {
   return (
     // <Card>
@@ -44,29 +43,31 @@ export default function ChartLineInteractive({
     //     </CardDescription>
     //   </CardHeader>
     //   <CardContent>
-    <ChartContainer config={chartConfig}>
+    <ChartContainer config={chartConfig} >
       <AreaChart
         accessibilityLayer
-        data={historicValues}
+        data={result.historicValues}
         margin={{
           left: 0,
           right: 0,
-          top: 0,
+          top: 5,
           bottom: 0,
         }}
       >
         <CartesianGrid horizontal={false} vertical={false} />
         <XAxis hide tickLine={false} axisLine={false} tickMargin={8} />
         <ChartTooltip
+          hideLabel
           cursor={false}
-          content={<ChartTooltipContent className="bg-emerald-950 border-zinc-800" indicator="line"  color="var(--color-emerald-950)"/>}
+          content={<ChartTooltipContent className="text-zinc-200" indicator="line"  color={result.isProfit ? "var(--color-brand-500)" : "var(--color-red-500)"}/>}
         />
         <Area
           dataKey="close"
           type="linear"
-          fill="var(--color-brand-500)"
+          fill={result.isProfit ? "var(--color-brand-500)" : "var(--color-red-500)"} // color of area
           fillOpacity={0.4}
-          stroke="var(--color-brand-500)"
+          stroke= {result.isProfit ? "var(--color-brand-500)" : "var(--color-red-500)"} // color of line
+          activeDot={{r: 4, fill: "var(--color-zinc-300)", strokeWidth: 0}}
         />
       </AreaChart>
     </ChartContainer>

@@ -38,7 +38,7 @@ function RewindToolResult({ loading, error, result }: RewindToolResultProps) {
             </div>
             {/* Mini chart placeholder */}
             <div className="mt-4" aria-hidden>
-                <ChartTest metaData={result.meta} historicValues={result.historicValues} />
+                <ChartTest result={result} />
             </div>
 
             {/* Result stub (replace with real data) */}
