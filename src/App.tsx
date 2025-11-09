@@ -66,7 +66,6 @@ function App() {
     // <div className="App">
     <div className="min-h-svh flex flex-col bg-zinc-950 text-zinc-100">
       <Analytics />
-      <Header />
       <main className="flex-1">
         <Hero />
 
@@ -106,7 +105,6 @@ function App() {
         {/* <Upgrade /> */}
 
       </main>
-      <Footer />
     </div>
     // </div>
   );

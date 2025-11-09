@@ -4,12 +4,20 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import './index.css'
 import App from './App.tsx'
 
+import Layout from '@/components/Layout';
+import Upgrade from '@/components/Upgrade';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<App />} />
+          <Route path="dashboard" element={<Upgrade />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>
 )
+
+
