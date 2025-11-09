@@ -1,4 +1,4 @@
-import type { Result, TimeSeriesMeta, TimeSeriesValuesFormatted } from "@/types";
+import type { Result } from "@/types";
 
 interface RewindToolResultChartProps {
   result: Result; 
