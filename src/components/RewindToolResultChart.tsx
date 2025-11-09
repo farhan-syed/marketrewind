@@ -57,9 +57,8 @@ export default function ChartLineInteractive({
         <CartesianGrid horizontal={false} vertical={false} />
         <XAxis hide tickLine={false} axisLine={false} tickMargin={8} />
         <ChartTooltip
-          hideLabel
           cursor={false}
-          content={<ChartTooltipContent className="text-zinc-200" indicator="line"  color={result.isProfit ? "var(--color-brand-500)" : "var(--color-red-500)"}/>}
+          content={<ChartTooltipContent className="text-zinc-200" hideLabel indicator="line" color={result.isProfit ? "var(--color-brand-500)" : "var(--color-red-500)"}/>}
         />
         <Area
           dataKey="close"
