@@ -1,6 +1,6 @@
 import RewindTool from "./RewindTool";
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react';
 
 interface HeroProps {
 
