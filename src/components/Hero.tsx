@@ -1,5 +1,7 @@
 import RewindTool from "./RewindTool";
 
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+
 interface HeroProps {
 
 }
@@ -19,7 +21,14 @@ function Hero({ }: HeroProps) {
                         reminders.
                     </p>
                     <div className="mt-6 flex items-center gap-4">
-                        <a href="/signin" className="rounded-lg bg-zinc-100 px-4 py-2 text-zinc-900 font-medium hover:bg-white">Create account</a>
+                    <SignedIn>
+                      <a href="/dashboard" className="rounded-lg bg-zinc-100 px-4 py-2 text-zinc-900 font-medium hover:bg-white">Dashboard</a>
+                    </SignedIn>
+                    <SignedOut>
+                        <SignInButton mode="modal" fallbackRedirectUrl="/dashboard">
+                          <button className="rounded-lg bg-zinc-100 px-4 py-2 text-zinc-900 font-medium hover:bg-white cursor-pointer">Create account</button>
+                        </SignInButton>
+                    </SignedOut>
                         {/* <a href="/pro" className="text-zinc-300 hover:text-zinc-100">See Pro features →</a> */}
                     </div>
                      <p className="mt-3 max-w-prose text-zinc-300 opacity-70 text-xs">No credit card required.</p>
