@@ -21,7 +21,7 @@ function Header({ }: HeaderProps) {
         </nav>
         <div className="flex items-center gap-3">
           <a href="/signin" className="text-sm opacity-80 hover:opacity-100">Sign in</a>
-          <a href="/signup" className="rounded-lg bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-900 hover:bg-white">Create account</a>
+          <a href="/signin" className="rounded-lg bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-900 hover:bg-white">Create account</a>
         </div>
       </div>
     </header>

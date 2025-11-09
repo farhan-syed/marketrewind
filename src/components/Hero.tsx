@@ -19,7 +19,7 @@ function Hero({ }: HeroProps) {
                         reminders.
                     </p>
                     <div className="mt-6 flex items-center gap-4">
-                        <a href="#tool" className="rounded-lg bg-zinc-100 px-4 py-2 text-zinc-900 font-medium hover:bg-white">Create account</a>
+                        <a href="/signin" className="rounded-lg bg-zinc-100 px-4 py-2 text-zinc-900 font-medium hover:bg-white">Create account</a>
                         {/* <a href="/pro" className="text-zinc-300 hover:text-zinc-100">See Pro features →</a> */}
                     </div>
                      <p className="mt-3 max-w-prose text-zinc-300 opacity-70 text-xs">No credit card required.</p>
