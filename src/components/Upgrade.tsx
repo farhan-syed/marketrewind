@@ -49,7 +49,7 @@ function Upgrade({ }: UpgradeProps) {
         <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="mt-2 text-2xl md:text-3xl font-semibold tracking-tight text-zinc-100">
-              <span className="text-brand-500">Go Pro for $25.</span>
+              <span className="text-brand-500">Unlock more for $1.99/month.</span>
             </h2>
             <p className="mt-2 text-sm text-zinc-400 max-w-prose">
               Upgrade for unlimited rewinds, track your portfolio, set reminders and compare trades.
@@ -59,7 +59,7 @@ function Upgrade({ }: UpgradeProps) {
             href="/pro"
             className="rounded-lg bg-brand-500 px-3 py-2 text-sm font-semibold text-emerald-950 hover:bg-brand-400"
           >
-            Upgrade to Pro
+            Upgrade
           </a>
         </header>
 
@@ -74,14 +74,14 @@ function Upgrade({ }: UpgradeProps) {
                 </th>
                 <th className="px-4 py-3 text-center font-medium">
                   <div>Pro</div>
-                  <div className="mt-0.5 text-xs font-semibold text-brand-400">$25 / year</div>
+                  <div className="mt-0.5 text-xs font-semibold text-brand-400">$1.99/month</div>
                 </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-zinc-800">
               {([
                 { label: "Shareable Rewind links", free: true, pro: true },
-                { label: "Unlimited Rewinds", free: "Up to 10 / day", pro: "50 / day" },
+                { label: "Unlimited Rewinds", free: true, pro: true },
                 { label: "Save watchlist", free: "Up to 5", pro: "Unlimited" },
                 { label: "Compare multiple stocks over time", free: false, pro: true },
                 { label: "Set reminders for gain/loss on selected date", free: false, pro: true },
