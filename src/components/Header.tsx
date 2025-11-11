@@ -1,4 +1,5 @@
 import RewindIcon from "./RewindSVG";
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 interface HeaderProps { }
 
@@ -20,8 +21,18 @@ function Header({ }: HeaderProps) {
             <a className="opacity-80 hover:opacity-100" href="/pro">Pro</a> */}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="/signin" className="text-sm opacity-80 hover:opacity-100">Sign in</a>
-          <a href="/signup" className="rounded-lg bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-900 hover:bg-white">Create account</a>
+          <SignedOut>
+            <SignInButton mode="modal" fallbackRedirectUrl="/dashboard">
+              <button className="text-sm text-zinc-100 opacity-80 hover:opacity-100 cursor-pointer">Sign in</button>
+            </SignInButton>
+            <SignInButton mode="modal" fallbackRedirectUrl="/dashboard">
+              <button className="rounded-lg bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-900 hover:bg-white cursor-pointer">Create account</button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <a href="/dashboard" className="text-sm opacity-80 hover:opacity-100">Dashboard</a>
+          <UserButton />
+          </SignedIn>
         </div>
       </div>
     </header>

@@ -14,13 +14,16 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   /* colors */
-  --color-twitter-blue: #1da1f2;
-  --color-dark: #181818;
-  --color-dark-menu: #121212;
-  --color-dark-hover: #3d3d3d;
-  --color-dark-p: #ffffff;
-  --color-dark-s: #aaaaaa;
-  --color-dark-purple: #673ab7;
+  
+  --color-brand-100: #9CEEBA;
+  --color-brand-200: #79E8A2;
+  --color-brand-300: #57E28A;
+  --color-brand-400: #34DC72;
+  --color-brand-500: #22C55E;
+  --color-brand-600: #1A9547;
+  --color-brand-700: #116530;
+  --color-brand-800: #09351A;
+
 }
 
 /* Optional: if you want class-based dark mode (instead of media) */
