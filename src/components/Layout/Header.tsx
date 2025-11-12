@@ -1,4 +1,4 @@
-import RewindIcon from "./RewindSVG";
+import RewindIcon from "@/components/ui/RewindSVG";
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 interface HeaderProps { }

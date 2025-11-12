@@ -4,9 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import './index.css'
 import App from './App.tsx'
 
-import Layout from '@/components/Layout';
-import Dashboard from '@/components/Dashboard';
-import Signin from '@/components/Signin';
+import Layout from '@/components/Main';
+import Dashboard from '@/components/pages/Dashboard';
 
 import { ClerkProvider } from '@clerk/clerk-react';
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -23,7 +22,6 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
           <Route path="dashboard" element={<Dashboard />}/>
-          <Route path="signin" element={<Signin />}/>
         </Route>
       </Routes>
     </BrowserRouter>

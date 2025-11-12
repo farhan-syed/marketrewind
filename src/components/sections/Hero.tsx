@@ -1,4 +1,4 @@
-import RewindTool from "./RewindTool";
+import RewindTool from "@/components/features/rewind-tool";
 
 import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react';
 

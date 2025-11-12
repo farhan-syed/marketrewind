@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Fields } from "../types";
-import RewindIcon from "./RewindSVG";
+import RewindIcon from "@/components/ui/RewindSVG";
 
 
 interface RewindToolForm {
