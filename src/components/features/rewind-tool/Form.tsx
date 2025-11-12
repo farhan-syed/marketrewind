@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Fields } from "../types";
+import type { Fields } from "@/types";
 import RewindIcon from "@/components/ui/RewindSVG";
 
 
