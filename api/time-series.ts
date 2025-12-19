@@ -4,16 +4,16 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  const { symbol, start, end, interval } = req.query;
+  const { symbol, start_date, end_date, interval } = req.query;
 
-  if (!symbol || !start || !end || !interval) {
+  if (!symbol || !start_date || !end_date || !interval) {
     return res.status(400).json({ error: "Missing params" });
   }
 
   const params = new URLSearchParams({
     symbol: String(symbol),
-    start_date: String(start),
-    end_date: String(end),
+    start_date: String(start_date),
+    end_date: String(end_date),
     interval: String(interval),
     apikey: process.env.TWELVE_API_KEY!,
   });
