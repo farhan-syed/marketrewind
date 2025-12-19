@@ -1,6 +1,6 @@
-import type { Result } from "../types";
+import type { Result } from "@/types";
 
-import ChartTest from "@/components/RewindToolResultChart"
+import ChartTest from "./Chart"
 
 interface RewindToolResultProps {
     loading: boolean;

@@ -16,7 +16,7 @@ export async function fetchTimeSeries(q: TimeSeriesQuery): Promise<TimeSeriesRes
         interval: q.interval
     });
 
-    const res = await fetch(`https://api.twelvedata.com/time_series?${params.toString()}&apikey=9c2e662474aa422eafb187f8416b4573`);
+    const res = await fetch(`/api/time-series?${params.toString()}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return (await res.json()) as TimeSeriesResponse;
 }

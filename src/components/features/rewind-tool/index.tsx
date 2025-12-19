@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
-import RewindToolForm from "@/components/RewindToolForm";
-import RewindToolResult from "@/components/RewindToolResult";
+import RewindToolForm from "./Form";
+import RewindToolResult from "./Result";
 
 import { fetchTimeSeries } from "@/api";
 import { nextDayISO, toResult } from "@/utils";

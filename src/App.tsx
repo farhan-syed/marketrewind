@@ -1,5 +1,5 @@
-import Hero from "./components/Hero";
-import Upgrade from "./components/Upgrade";
+import Hero from "@/components/sections/Hero";
+// import Upgrade from "@/components/sections/Upgrade";
 
 // vercel analytics
 import { Analytics } from "@vercel/analytics/react"
@@ -12,7 +12,7 @@ function App() {
       <Analytics />
       <main className="flex-1">
         <Hero />
-        <Upgrade />
+        {/* <Upgrade /> */}
       </main>
     </div>
   );
