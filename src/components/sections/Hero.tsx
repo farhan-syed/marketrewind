@@ -7,11 +7,11 @@ interface HeroProps {}
 function Hero({}: HeroProps) {
   return (
     <section>
-      <div className="mx-auto max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl px-4 grid gap-4 text-left">
+      <div className="mx-auto max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl p-6 md:p-0 md:py-4 grid text-left">
         <h1 className="font-semibold tracking-tight text-[clamp(1.75rem,4vw,3rem)]">
           Rewind the market.
         </h1>
-        <p className="text-zinc-300 max-w-prose leading-relaxed text-[clamp(0.95rem,1.2vw,1.05rem)]">
+        <p className="text-zinc-300 max-w-prose leading-relaxed text-[clamp(0.95rem,1.2vw,1.05rem)] mb-4">
           Pick an entry date and an exit date to see percent return and final
           value in seconds.
         </p>

@@ -4,12 +4,12 @@ import Footer from "@/components/Layout/Footer";
 
 function Layout() {
   return (
-    <div className="h-screen flex flex-col bg-zinc-950 text-zinc-100 overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100">
       <Header />
-      <main className="flex-1 flex items-center justify-center overflow-hidden">
-        <div className="w-full max-h-full overflow-auto">
-          <Outlet />
-        </div>
+      <main className="flex-1">
+        {/*<div className="w-full max-h-full overflow-auto">*/}
+        <Outlet />
+        {/*</div>*/}
       </main>
       <Footer />
     </div>

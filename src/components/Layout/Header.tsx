@@ -16,20 +16,7 @@ function Header({}: HeaderProps) {
           <span className="font-semibold tracking-tight">Market Rewind</span>
           <RewindIcon size={16} strokeWidth={3} />
         </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-zinc-300">
-          {/* <a className="text-zinc-100 font-medium" href="/rewind">Rewind</a>
-            <span className="opacity-40" aria-disabled>Watch</span>
-            <span className="opacity-40" aria-disabled>Insight</span>
-            <a className="opacity-80 hover:opacity-100" href="/pro">Pro</a> */}
-          <a
-            href="https://www.buymeacoffee.com/farhansyed"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-2 py-2 font-semibold text-black text-sm shadow-md hover:opacity-90 transition"
-          >
-            ☕ Buy me a coffee
-          </a>
-        </nav>
+
         {/*<div className="flex items-center gap-3">
           <SignedOut>
             <SignInButton mode="modal" fallbackRedirectUrl="/dashboard">
