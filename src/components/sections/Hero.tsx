@@ -6,17 +6,16 @@ interface HeroProps {}
 
 function Hero({}: HeroProps) {
   return (
-    <section className="relative">
-      <div className="mx-auto max-w-3xl px-4 py-12 lg:py-10 grid gap-10 lg:grid-cols-1 lg:items-center">
-        <div>
-          <h1 className="text-3xl/tight md:text-5xl/tight font-semibold tracking-light">
-            Rewind the market.
-          </h1>
-          <p className="mt-3 max-w-prose text-zinc-300">
-            Pick an entry date and an exit date to see percent return and final
-            value in seconds.
-          </p>
-          {/*
+    <section>
+      <div className="mx-auto max-w-3xl px-4 grid gap-4 text-left">
+        <h1 className="text-3xl/tight md:text-5xl/tight font-semibold tracking-light">
+          Rewind the market.
+        </h1>
+        <p className="text-zinc-300">
+          Pick an entry date and an exit date to see percent return and final
+          value in seconds.
+        </p>
+        {/*
           <div className="mt-6 flex items-center gap-4">
             <SignedIn>
               <a
@@ -54,7 +53,6 @@ function Hero({}: HeroProps) {
                             <dd className="mt-1 font-medium text-zinc-100">Multiple trades over a timeframe.</dd>
                         </div>
                     </dl>*/}
-        </div>{" "}
         {/* start of tool */}
         <RewindTool />
         {/* end of tool */}
