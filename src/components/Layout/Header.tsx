@@ -11,7 +11,7 @@ interface HeaderProps {}
 function Header({}: HeaderProps) {
   return (
     <header className="sticky top-0 z-30 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
-      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <div className="mx-auto max-w-4xl py-4 flex items-center justify-between">
         <a href="/" className="inline-flex items-center gap-1">
           <span className="font-semibold tracking-tight">Market Rewind</span>
           <RewindIcon size={16} strokeWidth={3} />
