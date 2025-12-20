@@ -3,9 +3,10 @@ interface FooterProps {}
 function Footer({}: FooterProps) {
   return (
     <footer className="border-t border-zinc-900 mt-auto">
-      <div className="mx-auto max-w-4xl py-4 text-sm text-zinc-500 flex justify-end gap-4">
+      <div className="mx-auto px-8 py-4 text-sm text-zinc-500 flex justify-end gap-4">
         {/*<span>© {new Date().getFullYear()} Market Rewind</span>*/}
         <div>
+          <span>by </span>
           <a
             href="https://x.com/0xfarhansyed"
             target="_blank"
