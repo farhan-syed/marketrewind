@@ -58,7 +58,7 @@ function RewindToolResult({ loading, error, result }: RewindToolResultProps) {
       <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 font-mono tracking-tight tabular-nums">
         <Metric
           label="Shares"
-          value={result.shares}
+          value={Number(result.shares).toLocaleString("en-US")}
           hint={`${result.entry.close} / share`}
         />
         <Metric

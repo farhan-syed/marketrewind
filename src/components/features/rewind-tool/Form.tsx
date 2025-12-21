@@ -143,7 +143,7 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
                      px-3 py-2 text-sm font-semibold h-10
                      inline-flex items-center justify-center gap-1"
         >
-          <RewindIcon size={16} strokeWidth={3} />
+          <RewindIcon size={24} strokeWidth={2} />
         </button>
       </div>
     </form>
