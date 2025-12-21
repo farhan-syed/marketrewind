@@ -55,7 +55,7 @@ function RewindToolResult({ loading, error, result }: RewindToolResultProps) {
       </div>
 
       {/* Result stub (replace with real data) */}
-      <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 font-mono tracking-wider">
+      <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 font-mono tracking-tight tabular-nums">
         <Metric
           label="Shares"
           value={result.shares}
