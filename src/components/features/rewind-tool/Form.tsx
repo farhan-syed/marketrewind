@@ -80,9 +80,9 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-2 mb-5 grid grid-cols-1 w-full gap-3 md:grid-cols-5 font-mono tracking-wider"
+      className="mt-2 mb-5 grid grid-cols-1 w-full gap-3 md:grid-cols-8 font-mono tracking-wider"
     >
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-1">
         <span className="text-xs text-zinc-400">Symbol</span>
         <input
           type="text"
@@ -96,7 +96,7 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           aria-label="Ticker Symbol"
         />
       </label>
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Entry date</span>
         <input
           type="date"
@@ -104,10 +104,11 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           value={fields.entryDate}
           onChange={onPurchaseDateChange}
           className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          style={{ colorScheme: "dark" }}
           aria-label="Entry date"
         />
       </label>
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Exit date</span>
         <input
           type="date"
@@ -115,11 +116,12 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           value={fields.exitDate}
           onChange={onSellDateChange}
           className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          style={{ colorScheme: "dark" }}
           aria-label="Exit date"
+          max={new Date().toISOString().split("T")[0]}
         />
       </label>
-
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Amount</span>
         <input
           type="text"
@@ -129,20 +131,18 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           onChange={onAmountInvestedChange}
           onBlur={onAmountInvestedBlur}
           onFocus={onAmountInvestedFocus}
-          className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10 pl-7 text-right"
+          className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
           aria-label="Invested Amount"
+          max={new Date().toISOString().split("T")[0]}
         />
       </label>
-
-      <div className="flex items-end">
+      <div className="flex items-end md:col-span-1">
         <button
           type="submit"
-          // className="w-full rounded-lg bg-emerald-500 px-3 py-2 text-sm font-semibold text-emerald-950 hover:bg-emerald-400 h-10">
           className="w-full rounded-lg bg-brand-500 hover:bg-brand-400 text-emerald-950
-                                 px-3 py-2 text-sm font-semibold h-10
-                                 inline-flex items-center justify-center gap-1"
+                     px-3 py-2 text-sm font-semibold h-10
+                     inline-flex items-center justify-center gap-1"
         >
-          Rewind
           <RewindIcon size={16} strokeWidth={3} />
         </button>
       </div>
