@@ -99,7 +99,7 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
       <label className="flex flex-col gap-1">
         <span className="text-xs text-zinc-400">Entry date</span>
         <input
-          type="text"
+          type="date"
           placeholder="2020-03-19"
           value={fields.entryDate}
           onChange={onPurchaseDateChange}
@@ -110,7 +110,7 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
       <label className="flex flex-col gap-1">
         <span className="text-xs text-zinc-400">Exit date</span>
         <input
-          type="text"
+          type="date"
           placeholder="2025-03-19"
           value={fields.exitDate}
           onChange={onSellDateChange}
