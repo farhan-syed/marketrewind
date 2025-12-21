@@ -59,7 +59,7 @@ function RewindToolResult({ loading, error, result }: RewindToolResultProps) {
         <Metric
           label="Shares"
           value={result.shares}
-          hint={`@ ${result.entry.close} / share`}
+          hint={`${result.entry.close} / share`}
         />
         <Metric
           label="Return"
@@ -69,7 +69,7 @@ function RewindToolResult({ loading, error, result }: RewindToolResultProps) {
         <Metric
           label="Final Value"
           value={result.netProceeds}
-          hint={`@ ${result.exit.close} / share`}
+          hint={`${result.exit.close} / share`}
         />
       </div>
     </>
