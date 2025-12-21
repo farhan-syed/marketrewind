@@ -16,7 +16,8 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
 
   // handlers
   const onTickerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = e.currentTarget.value.toUpperCase();
+    let v = e.currentTarget.value.toUpperCase().replace(/[^A-Z]/g, "");
+    if (v.length > 5) v = v.slice(0, 5);
     setFields((prev) => ({ ...prev, symbol: v }));
   };
 
@@ -47,12 +48,13 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-2 mb-5 grid grid-cols-1 w-full gap-3 md:grid-cols-5"
+      className="mt-2 mb-5 grid grid-cols-1 w-full gap-3 md:grid-cols-5 font-mono tracking-wider"
     >
       <label className="flex flex-col gap-1">
         <span className="text-xs text-zinc-400">Symbol</span>
         <input
           type="text"
+          maxLength={5}
           value={fields.symbol}
           onChange={onTickerChange}
           placeholder="AAPL"
