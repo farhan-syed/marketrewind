@@ -12,8 +12,8 @@ function Hero({}: HeroProps) {
           Rewind the market.
         </h1>
         <p className="text-zinc-300 max-w-prose leading-relaxed text-[clamp(0.95rem,1.2vw,1.05rem)] mb-4">
-          Pick an entry date and an exit date to see percent return and final
-          value in seconds.
+          Pick a symbol, entry date, exit date and amount to see your percent
+          return and final value in seconds.
         </p>
         {/*
           <div className="mt-6 flex items-center gap-4">
