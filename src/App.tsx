@@ -6,9 +6,11 @@ import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
-    <div className="bg-zinc-950 text-zinc-100">
+    <div className="h-full bg-zinc-950 text-zinc-100">
       <Analytics />
-      <Hero />
+      <div className="h-full flex items-center justify-center">
+        <Hero />
+      </div>
       {/* <Upgrade /> */}
     </div>
   );
