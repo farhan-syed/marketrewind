@@ -14,9 +14,12 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
     investedAmount: "",
   });
 
+  const [rawAmount, setRawAmount] = useState("");
+
   // handlers
   const onTickerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = e.currentTarget.value.toUpperCase();
+    let v = e.currentTarget.value.toUpperCase().replace(/[^A-Z]/g, "");
+    if (v.length > 5) v = v.slice(0, 5);
     setFields((prev) => ({ ...prev, symbol: v }));
   };
 
@@ -30,11 +33,41 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
     setFields((prev) => ({ ...prev, exitDate: v }));
   };
 
+  const usdFormatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+  });
+
+  const onAmountInvestedBlur = () => {
+    if (rawAmount === "") return;
+
+    const value = Number(rawAmount);
+    if (Number.isNaN(value)) return;
+
+    setRawAmount(usdFormatter.format(value)); // now show $1,000.00
+  };
+
+  const onAmountInvestedFocus = () => {
+    if (!rawAmount) return;
+
+    // Strip non-digits (remove $ and commas)
+    const numeric = rawAmount.replace(/[^0-9.]/g, "");
+    setRawAmount(numeric);
+  };
+
   const onAmountInvestedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const n = e.currentTarget.valueAsNumber;
+    const raw = e.currentTarget.value;
+
+    // Allow only digits and one optional decimal
+    if (!/^\d*\.?\d{0,2}$/.test(raw)) return;
+
+    setRawAmount(raw); // keep what user types
+
+    const value = Number(raw);
     setFields((prev) => ({
       ...prev,
-      investedAmount: Number.isNaN(n) ? "" : n,
+      investedAmount: Number.isNaN(value) ? "" : value,
     }));
   };
 
@@ -47,12 +80,13 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-2 mb-5 grid grid-cols-1 w-full gap-3 md:grid-cols-5"
+      className="mt-2 mb-5 grid grid-cols-1 w-full gap-3 md:grid-cols-8 font-mono tracking-wider"
     >
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-1">
         <span className="text-xs text-zinc-400">Symbol</span>
         <input
           type="text"
+          maxLength={5}
           value={fields.symbol}
           onChange={onTickerChange}
           placeholder="AAPL"
@@ -62,51 +96,54 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           aria-label="Ticker Symbol"
         />
       </label>
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Entry date</span>
         <input
-          type="text"
+          type="date"
           placeholder="2020-03-19"
           value={fields.entryDate}
           onChange={onPurchaseDateChange}
           className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          style={{ colorScheme: "dark" }}
           aria-label="Entry date"
         />
       </label>
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Exit date</span>
         <input
-          type="text"
+          type="date"
           placeholder="2025-03-19"
           value={fields.exitDate}
           onChange={onSellDateChange}
           className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          style={{ colorScheme: "dark" }}
           aria-label="Exit date"
+          max={new Date().toISOString().split("T")[0]}
         />
       </label>
-
-      <label className="flex flex-col gap-1">
+      <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Amount</span>
         <input
-          type="number"
-          placeholder="10000"
-          value={fields.investedAmount}
+          type="text"
+          inputMode="decimal"
+          placeholder="$10,000"
+          value={rawAmount}
           onChange={onAmountInvestedChange}
+          onBlur={onAmountInvestedBlur}
+          onFocus={onAmountInvestedFocus}
           className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
           aria-label="Invested Amount"
+          max={new Date().toISOString().split("T")[0]}
         />
       </label>
-
-      <div className="flex items-end">
+      <div className="flex items-end md:col-span-1">
         <button
           type="submit"
-          // className="w-full rounded-lg bg-emerald-500 px-3 py-2 text-sm font-semibold text-emerald-950 hover:bg-emerald-400 h-10">
           className="w-full rounded-lg bg-brand-500 hover:bg-brand-400 text-emerald-950
-                                 px-3 py-2 text-sm font-semibold h-10
-                                 inline-flex items-center justify-center gap-1"
+                     px-3 py-2 text-sm font-semibold h-10
+                     inline-flex items-center justify-center gap-1"
         >
-          Rewind
-          <RewindIcon size={16} strokeWidth={3} />
+          <RewindIcon size={24} strokeWidth={2} />
         </button>
       </div>
     </form>

@@ -7,7 +7,7 @@ interface HeroProps {}
 function Hero({}: HeroProps) {
   return (
     <section>
-      <div className="mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl p-6 md:p-0 md:py-4 grid text-left">
+      <div className="mx-auto max-w-lg md:max-w-xl lg:max-w-2xl p-6 md:p-0 md:py-4 grid text-left">
         <h1 className="font-semibold tracking-tight text-[clamp(1.75rem,4vw,3rem)]">
           Rewind the market.
         </h1>
