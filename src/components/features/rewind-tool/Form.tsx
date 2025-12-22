@@ -119,7 +119,7 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           placeholder="2020-03-19"
           value={fields.entryDate}
           onChange={onPurchaseDateChange}
-          className={`w-full rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.entryDate ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
+          className={`w-full box-border appearance-none rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.entryDate ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
           style={{ colorScheme: "dark" }}
           aria-label="Entry date"
         />
@@ -131,7 +131,7 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           placeholder="2025-03-19"
           value={fields.exitDate}
           onChange={onSellDateChange}
-          className={`w-full rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.exitDate ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
+          className={`w-full box-border appearance-none rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.exitDate ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
           style={{ colorScheme: "dark" }}
           aria-label="Exit date"
           max={new Date().toISOString().split("T")[0]}
