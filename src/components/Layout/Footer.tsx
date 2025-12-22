@@ -3,8 +3,7 @@ interface FooterProps {}
 function Footer({}: FooterProps) {
   return (
     <footer className="border-t border-zinc-900 mt-auto font-mono tracking-tighter">
-      <div className="mx-auto max-w-lg md:max-w-xl lg:max-w-2xl px-6 md:px-0 py-4 flex items-center justify-between text-sm text-zinc-500">
-        {/* Left side */}
+      <div className="mx-auto max-w-lg md:max-w-xl lg:max-w-2xl px-6 md:px-0 py-4 flex items-center justify-end text-sm text-zinc-500">
         {/* Right side */}
         <a
           href="https://x.com/0xfarhansyed"
