@@ -5,7 +5,6 @@ function Footer({}: FooterProps) {
     <footer className="border-t border-zinc-900 mt-auto font-mono tracking-tighter">
       <div className="mx-auto max-w-lg md:max-w-xl lg:max-w-2xl px-6 md:px-0 py-3 flex items-center justify-end text-sm text-zinc-500">
         {/* Right side */}
-        <span className="mr-1">built by</span>
         <a
           href="https://x.com/0xfarhansyed"
           target="_blank"
