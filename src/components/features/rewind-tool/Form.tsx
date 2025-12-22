@@ -16,33 +16,21 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
 
   const [rawAmount, setRawAmount] = useState("");
 
-  type FieldErrors = Partial<Record<keyof Fields, string>>;
+  type FieldErrors = Partial<Record<keyof Fields, boolean>>;
   const [errors, setErrors] = useState<FieldErrors>({});
 
   const validate = (): boolean => {
     const newErrors: FieldErrors = {};
 
-    if (!fields.symbol.trim()) {
-      newErrors.symbol = "Symbol is required";
-    }
-
-    if (!fields.entryDate) {
-      newErrors.entryDate = "Entry date is required";
-    }
-
-    if (!fields.exitDate) {
-      newErrors.exitDate = "Exit date is required";
-    }
-
-    if (!fields.investedAmount || Number(fields.investedAmount) <= 0) {
-      newErrors.investedAmount = "Enter a valid amount";
-    }
+    if (!fields.symbol.trim()) newErrors.symbol = true;
+    if (!fields.entryDate) newErrors.entryDate = true;
+    if (!fields.exitDate) newErrors.exitDate = true;
+    if (!fields.investedAmount || Number(fields.investedAmount) <= 0)
+      newErrors.investedAmount = true;
 
     setErrors(newErrors);
-
     return Object.keys(newErrors).length === 0;
   };
-
   // handlers
   const onTickerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let v = e.currentTarget.value.toUpperCase().replace(/[^A-Z]/g, "");
@@ -118,14 +106,11 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           value={fields.symbol}
           onChange={onTickerChange}
           placeholder="AAPL"
-          className="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          className={`w-full rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.symbol ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
           inputMode="text"
           autoCapitalize="characters"
           aria-label="Ticker Symbol"
         />
-        {errors.symbol && (
-          <p className="text-red-400 text-sm">{errors.symbol}</p>
-        )}
       </label>
       <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Entry date</span>
@@ -134,14 +119,10 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           placeholder="2020-03-19"
           value={fields.entryDate}
           onChange={onPurchaseDateChange}
-          className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          className={`w-full rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.entryDate ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
           style={{ colorScheme: "dark" }}
           aria-label="Entry date"
         />
-
-        {errors.entryDate && (
-          <p className="text-red-400 text-sm">{errors.entryDate}</p>
-        )}
       </label>
       <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Exit date</span>
@@ -150,15 +131,11 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           placeholder="2025-03-19"
           value={fields.exitDate}
           onChange={onSellDateChange}
-          className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          className={`w-full rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.exitDate ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
           style={{ colorScheme: "dark" }}
           aria-label="Exit date"
           max={new Date().toISOString().split("T")[0]}
         />
-
-        {errors.exitDate && (
-          <p className="text-red-400 text-sm">{errors.exitDate}</p>
-        )}
       </label>
       <label className="flex flex-col gap-1 md:col-span-2">
         <span className="text-xs text-zinc-400">Amount</span>
@@ -170,14 +147,10 @@ function RewindToolForm({ onCalculate }: RewindToolForm) {
           onChange={onAmountInvestedChange}
           onBlur={onAmountInvestedBlur}
           onFocus={onAmountInvestedFocus}
-          className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500 h-10"
+          className={`w-full rounded-lg border bg-zinc-950 px-3 py-2 text-sm outline-none h-10 ${errors.investedAmount ? "border-red-500 focus:border-red-500" : "border-zinc-700 focus:border-zinc-500"}`}
           aria-label="Invested Amount"
           max={new Date().toISOString().split("T")[0]}
         />
-
-        {errors.investedAmount && (
-          <p className="text-red-400 text-sm">{errors.investedAmount}</p>
-        )}
       </label>
       <div className="flex items-end md:col-span-1">
         <button
